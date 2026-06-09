@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calc!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <main class="wrapper">
+    <header class="app-header">
+      <span class="app-icon">🧮</span>
+      <h1 class="app-title">Calc<span class="title-accent">!</span></h1>
+    </header>
+
+    <div class="calculator" role="application" aria-label="Calculator">
+
+      <div class="display" aria-live="polite">
+        <span class="display-expr" id="expr"></span>
+        <span class="display-value" id="result">0</span>
+      </div>
+
+      <div class="op-row" role="group" aria-label="Operations">
+        <button class="btn-op" data-op="+" onclick="setOp('+')" aria-label="Add">+</button>
+        <button class="btn-op" data-op="-" onclick="setOp('-')" aria-label="Subtract">−</button>
+        <button class="btn-op" data-op="*" onclick="setOp('*')" aria-label="Multiply">×</button>
+        <button class="btn-op" data-op="/" onclick="setOp('/')" aria-label="Divide">÷</button>
+        <button class="btn-op" data-op="^" onclick="setOp('^')" aria-label="Power">x<sup>y</sup></button>
+      </div>
+
+      <div class="numpad" role="group" aria-label="Number pad">
+        <button class="btn-num" onclick="press('7')">7</button>
+        <button class="btn-num" onclick="press('8')">8</button>
+        <button class="btn-num" onclick="press('9')">9</button>
+        <button class="btn-num" onclick="press('4')">4</button>
+        <button class="btn-num" onclick="press('5')">5</button>
+        <button class="btn-num" onclick="press('6')">6</button>
+        <button class="btn-num" onclick="press('1')">1</button>
+        <button class="btn-num" onclick="press('2')">2</button>
+        <button class="btn-num" onclick="press('3')">3</button>
+        <button class="btn-num" onclick="press('.')">.</button>
+        <button class="btn-num" onclick="press('0')">0</button>
+        <button class="btn-num btn-del" onclick="del()" aria-label="Delete">⌫</button>
+      </div>
+
+      <div class="action-row">
+        <button class="btn-clear" onclick="clear_()">AC</button>
+        <button class="btn-equals" onclick="equals()">=</button>
+      </div>
+
+    </div>
+
+    <footer class="signature" aria-label="Author">
+      <span class="sig-by">by</span>
+      <span class="sig-name">Melamed</span>
+    </footer>
+  </main>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
